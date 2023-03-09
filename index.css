@@ -1,12 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
 html {
+  background: black;
   min-height: 100%;
 }
 
 body {
   height: 100vh;
-  margin: 0;
+  margin: 10px;
   padding: 0.5rem;
   color: rgba(128, 255, 128, 0.8);
   font: 2.25vh Inconsolata, monospace;
