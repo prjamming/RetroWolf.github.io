@@ -98,19 +98,23 @@
     color: white;
   }
   #uv-address {
-      float: left;
-      margin: 0;
+      float: right;
+      margin: 10;
       font: inherit;
       font-size: 3.75vh;
       border: none;
       background-color: transparent;
       outline: none;
-      color: inherit;  
+      color: inherit; 
+      width: 100%;
   }
-  #uv-address::before {
-     content: "Search:";
-     float: left;
+  p2{
+    float: left;
   }
+  ::placeholder {
+  color: rgba(128, 255, 128, 0.8);
+  text-align: center;
+}
   </style>
 	<body>
 		<h1>RetroProx</h1>
@@ -120,8 +124,9 @@
 		<p id="uv-error"></p>
 		<pre id="uv-error-code"></pre>
 	</div>
+  <h2>Search:</h2>
     <div id="uv-address">
-      <input id="uv-address" type="text">
+      <input id="uv-address" type="text" placeholder="Ex. https://example.com">
       <button id="enter" onclick="getVal()" hidden>Button</button>
 
       <script>
@@ -140,5 +145,13 @@
           }
       </script>
     </div>
+<div class="column">
+      <h2><br></h2>
+      <p class="output"><a href="https://retroprox.onrender.com/uv/service/hvtrs8%2F-mctjsqpmt%2Ccmm-jmhjn%7B%2F">Roblox</a>
+      <p class="output"><a href="https://retroprox.onrender.com/uv/service/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-">Youtube</a>
+      <p class="output"><a href="https://retroprox.onrender.com/uv/service/hvtrs8%2F-wuw%2Cilsvaercm%2Ccmm-">Instagram</a>
+      <p class="output"><a href="https://retroprox.onrender.com/uv/service/hvtrs8%2F-iduln%7B.ao">iFunny</a>
+      <p class="output"><a href="https://retroprox.onrender.com/uv/service/hvtrs8%2F-tuivtgr%2Ccmm">Twitter</a>
+      <p class="output"><a href="https://retroprox.onrender.com/uv/service/hvtrs8%2F-wuw%2Ctkkvoi.aoo%2F">TikTok</a>
 </body>
 </html> 
