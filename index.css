@@ -81,3 +81,17 @@ a::after {
 .errorcode {
   color: white;
 }
+#cmdline {
+    float: right;
+    margin: 0;
+    width: 91.98158%;
+    font: inherit;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: inherit;  
+}
+#cmdline::before {
+   content: "Search:";
+}
