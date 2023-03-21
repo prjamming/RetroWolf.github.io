@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<title>RetroProx | A Minimalistic Ultraviolet Frontend</title>
+	<meta name="description" content="RetroProx is a minimalistic Ultraviolet frontend." />
+	<link rel="shortcut icon" content="favicon.ico" />
+	<script src="uv/uv.bundle.js" defer></script>
+	<script src="uv/uv.config.js" defer></script>
+	<script src="register-sw.js" defer></script>
+	<script src="search.js" defer></script>
+	<script src="index.js" defer></script>
+</head>
+<style>
+  @import 'https://fonts.googleapis.com/css?family=Inconsolata';
+
+  html {
+    background: black;
+    min-height: 100%;
+  }
+
+  body {
+    height: 100vh;
+    margin: 10px;
+    padding: 10px;
+    color: rgba(128, 255, 128, 0.8);
+    font: 2.25vh Inconsolata, monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+    text-align: center;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  ::selection {
+    background: #0080FF;
+    text-shadow: none;
+  }
+  pre {
+    margin: 0;
+  }
+
+  .terminal {
+    box-sizing: inherit;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  .output {
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow:
+        0 0 1px rgba(51, 255, 51, 0.4),
+        0 0 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .output::before {
+    content: "> ";
+  }
+
+  /*
+  .input {
+    color: rgba(192, 255, 192, 0.8);
+    text-shadow:
+        0 0 1px rgba(51, 255, 51, 0.4),
+        0 0 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .input::before {
+    content: "$ ";
+  }
+  */
+
+  a {
+    color: rgba(128, 255, 128, 0.8);
+    text-decoration: none;
+  }
+
+  a::before {
+    content: "[";
+  }
+
+  a::after {
+    content: "]";
+  }
+
+  .errorcode {
+    color: white;
+  }
+  #uv-address {
+      float: left;
+      margin: 0;
+      font: inherit;
+      font-size: 3.75vh;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      color: inherit;  
+  }
+  #uv-address::before {
+     content: "Search:";
+     float: left;
+  }
+  </style>
+	<body>
+		<h1>RetroProx</h1>
+	</div>
+	<p> </p>
+	<div class="center-margin">
+		<p id="uv-error"></p>
+		<pre id="uv-error-code"></pre>
+	</div>
+    <div id="uv-address">
+      <input id="uv-address" type="text">
+      <button id="enter" onclick="getVal()" hidden>Button</button>
+
+      <script>
+      const xor = { encode(str){ if (!str) return str; return encodeURIComponent(str.toString().split("").map((char, ind) => ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char).join("")); }, decode(str){ if (!str) return str; let [ input, ...search ] = str.split("?"); return decodeURIComponent(input).split("").map((char, ind) => ind % 2 ? String.fromCharCode(char.charCodeAt(0) ^ 2) : char).join("") + (search.length ? "?" + search.join("?") : ""); }, };
+      var input = document.getElementById("uv-address");
+      input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("enter").click();
+        }
+      });
+      function getVal() {
+          const val = document.querySelector('input').value;
+           var purl = xor.encode(val); var go = "https://retroprox.onrender.com/uv/service/"+purl;
+           location.replace(go);
+          }
+      </script>
+    </div>
+</body>
+</html> 
