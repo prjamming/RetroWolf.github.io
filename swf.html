@@ -1,0 +1,32 @@
+<html>
+<style>
+    html,body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+  </style>
+<body>
+<div id='gameframe'></div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon='{"rayId":"7ac895935ae5b077","version":"2023.3.0","r":1,"token":"09f926f5d6054319a4bf6eacb2ac6165","si":100}' crossorigin="anonymous"></script>
+</body>
+<script src='https://ruffle.rs/demo/index.js'></script>
+<script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const gameName = urlParams.get('notebook');
+      var swfobject = {};
+      swfobject.embedSWF = function(url, cont, width, height){
+        var ruffle = window.RufflePlayer.newest(),
+          player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+          autoplay: "on",
+          width: width,
+          height: height,
+          style: 'width: ' + width + '; height: ' + height + ';'
+          });
+
+      player.load({ url: url });
+      }
+      swfURL = 'https://retrowolf.github.io/flashgames/sfw/' + gameName + '.swf'
+      swfobject.embedSWF(swfURL, 'gameframe', "100vw", "100vh");
+    </script>
