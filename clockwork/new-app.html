@@ -1,0 +1,53 @@
+<html>
+  <html>
+  <h2>Fill out info in the popup boxes. Then when done press download. Then upload the downloaded file to the github respitory you used for the popups.</h2>
+  <a class="simple">Download File</a>
+  <script>
+    const link = document.querySelector('a.simple');
+
+    const saveBtn = document.querySelector('button.save-file');
+
+    var name = prompt("Filename(include extention)");
+    var site = prompt("Site url(include https://)");
+    var gu = prompt("Github username(replace spaces with -)");
+    var gr = prompt("Github respitory name(replace spaces with -)");
+    const text =`function start() {
+  
+  ////MADE FOR VERSION 0.12.0 SCRIPT SYSTEM////
+
+  ////CONFIG////
+
+  var link = "${site}"; // link to app webpage
+  var id = "https://${gu}.github.io/${gr}/${name}"; // set this to the url location of your script
+  
+  ////SCRIPT////
+  
+  var ExampleLink = document.createElement("a");
+  var ExampleIFrame = document.createElement("iframe");
+  
+  ExampleIFrame.style = "display: none;";
+  ExampleIFrame.className = "app "+id;
+  ExampleIFrame.id = id;
+  ExampleIFrame.src = "about:blank";
+  
+  ExampleLink.href = "javascript:openapp('"+ ExampleIFrame.id +"','" + link + "');" ;
+  ExampleLink.innerHTML = "<img src=\\"https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=" + link + "&size=16\\"width=\\"16px\\" height=\\"16px\\">";  
+  ExampleLink.className = id; 
+  ExampleLink.addEventListener('dblclick', (e) => {
+    uninstallApp(ExampleIFrame.id);
+  });
+  
+  document.getElementById("navbar").appendChild(ExampleLink);
+  document.getElementById("main").appendChild(ExampleIFrame);
+}
+
+start();`;
+
+    var textBlob = new Blob([text], {type: 'text/plain'});
+
+    link.setAttribute('href', URL.createObjectURL(textBlob));
+
+    link.setAttribute('download', `${name.toLowerCase()}`);
+  </script>
+</html>
+</html>
