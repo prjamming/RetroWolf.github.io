@@ -5,11 +5,30 @@
     <script async src="https://arc.io/widget.min.js#n2Wgjzok"></script>
     <link id="maincss" rel="stylesheet" href="/index.css">
   </head>
+  <body onload="startTime()">
   <body>
     <div class="noise"></div>
     <div class="overlay"></div>
     <div class="terminal">
       <h1>RetroWolf</h1>
+    <h2><div id="txt" class="txt"></div></h2>
+    <script>
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+      setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
     <div class="column">
       <h2>My projects:</h2>
       <p class="output"><a href="/file-host">File-Host</a> (Frozen Chromebook Prank)
