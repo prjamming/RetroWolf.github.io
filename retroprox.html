@@ -114,6 +114,9 @@
   ::placeholder {
   color: rgba(128, 255, 128, 0.8);
   text-align: center;
+  }
+  input:focus::placeholder {
+  color: transparent;
 }
   </style>
 	<body>
@@ -124,9 +127,9 @@
 		<p id="uv-error"></p>
 		<pre id="uv-error-code"></pre>
 	</div>
-  <h2>Search:</h2>
+  <h2>URL:</h2>
     <div id="uv-address">
-      <input id="uv-address" type="text" placeholder="Ex. https://example.com">
+      <input id="uv-address" type="text" placeholder="Ex. https://example.com" style="text-align:center">
       <button id="enter" onclick="getVal()" hidden>Button</button>
 
       <script>
