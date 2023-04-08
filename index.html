@@ -1,60 +1,16 @@
 <!DOCTYPE html>
 <html style="color:white">
   <head>
-    <title>RetroWeb</title>
+    <title>404</title>
     <script async src="https://arc.io/widget.min.js#n2Wgjzok"></script>
     <link id="maincss" rel="stylesheet" href="/index.css">
   </head>
-  <body onload="startTime()">
   <body>
     <div class="noise"></div>
     <div class="overlay"></div>
     <div class="terminal">
-      <h1>RetroWeb</h1>
-    <h2><div id="txt" class="txt"></div></h2>
-    <script>
-    function startTime() {
-      const today = new Date();
-      let h = today.getHours();
-      let m = today.getMinutes();
-      let s = today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
-      setTimeout(startTime, 1000);
-    }
-
-    function checkTime(i) {
-      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-      return i;
-    }
-    </script>
-    <div class="column">
-      <h2>My projects:</h2>
-      <p class="output"><a href="/file-host">File-Host</a> (Frozen Chromebook Prank)
-      <p class="output"><a href="/clockwork-app">MyClockWork</a> (ClockWork With Shadow Installed)
-      <p class="output"><a href="/flashgames.html">Flash Games</a> (playflash games using Ruffle)
-      <p class="output"><a href="/retroprox.html">RetroProx</a> (Proxy site made by me)
-      <p class="output"><a href="/proxy.html">Proxies</a> (Proxy servers)
-      <h2>Classicube maps:</h2>
-      <p class="output"><a href="/classicube-maps/MountResort.cw">Mount Resort</a>
-      <p class="output"><a href="/classicube-maps/bestcity.cw">Best City</a>
-      <p class="output"><a href="/classicube-maps/city.cw">City</a>
-      <p class="output"><a href="/classicube-maps/retrowolf+.cw">RetroWolf+</a>
-    </div>
-    <div class="column">  
-      <h2>ClockWork apps:</h2>
-      <p class="output"><a href="/clockwork/app-template.js">App Template</a>
-      <p class="output"><a href="/clockwork/sm64.js">Super Mario 64</a>
-      <p class="output"><a href="/clockwork/guitarflash.js">Guitar Flash</a>
-      <p class="output"><a href="/clockwork/dogeminer.js">Doge Miner</a>
-      <p class="output"><a href="/clockwork/shadow.js">Shadow</a>
-      <p class="output"><a href="/clockwork/likee.js">Likee</a>
-      <p class="output"><a href="/clockwork/coub.js">Coub</a>
-      <h2>ClockWork themes:</h2>
-      <p class="output"><a href="/clockwork/theme-template.css">Theme Template</a>
-      <p><br></p>
-    </div>
+      <h1>Error <span class="errorcode">404</span></h1>
+      <p class="output">The RetroWolf website has been renamed and moved to <a href="https://retrofiber.github.io">RetroFiber</a>.</p>
     </div>
   </body>
 </html>
